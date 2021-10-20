@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SherlockDroid</string>
+    <string name="main_title">Android Holmes</string>
+    <string name="tapjacking">TapJacking</string>
+    <string name="exportedActivity">Activity Exported</string>
+    <string name="exportedReceiver">Receiver Exported</string>
+    <string name="exportedService">Service Exported</string>
+    <string name="contentURI">Content URI</string>
+    <string name="tap_jacking_text">This application demonstrates TapJacking.</string>
+</resources>
