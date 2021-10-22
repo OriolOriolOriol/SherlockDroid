@@ -12,7 +12,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Config {
-    public static final String PACKAGE = "com.elearnsecurity.injectme";
+    public static final String PACKAGE = "com.els.filebrowser";
     //===========================================================================================================
     public static final String ActivityExported="com.elearnsecurity.insecureactivities.LeakyActivity";
     //===========================================================================================================
@@ -24,7 +24,8 @@ public class Config {
     public static final String ProviderExported1="com.elearnsecurity.injectme.provider.CredentialProvider";
     public static final String ProviderExported2="com.elearnsecurity.injectme.CredentialProvider";
     //===========================================================================================================
-    public static final String ProviderExportedPath="";
+    public static final String ProviderExportedPath1="content://"+ PACKAGE+"/../../../../../../etc/hosts";
+    public static final String ProviderExportedPath2="com.els.filebrowser.accessfile";
 
 
 

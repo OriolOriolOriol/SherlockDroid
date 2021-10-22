@@ -19,6 +19,7 @@ import static com.example.sherlockdroid.config.Config.ActivityExported;
 import static com.example.sherlockdroid.config.Config.PACKAGE;
 import static com.example.sherlockdroid.config.Config.ProviderExported1;
 import static com.example.sherlockdroid.config.Config.ProviderExported2;
+import static com.example.sherlockdroid.config.Config.ProviderExportedPath2;
 import static com.example.sherlockdroid.config.Config.ReceiverExported;
 import static com.example.sherlockdroid.config.Config.ReceiverExportedACTION;
 import static com.example.sherlockdroid.config.Config.ServiceExported;
@@ -80,8 +81,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Intent collegamento = new Intent(MainActivity.this, com.example.sherlockdroid.tools.ContentURI.class);
-                        //collegamento.putExtra("Package", PACKAGE);
-                        //collegamento.putExtra("ContentURI", ProviderExported1);
+                         //collegamento.putExtra("Package", PACKAGE);
+                         //collegamento.putExtra("ContentURI", Prov);
                         //collegamento.putExtra("ContentProvider",ProviderExported2);
                         startActivity(collegamento);
                     }
@@ -160,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
             ProviderInfo[] list = pManager.getPackageInfo(PACKAGE, PackageManager.GET_PROVIDERS).providers;
             for (ProviderInfo providerInfo : list) {
                 //Log.v("PROVIDERS",providerInfo.name);
-                if(providerInfo.name.equals(ProviderExported2)) {
+                if(providerInfo.name.equals(ProviderExportedPath2)) {
                     Toast info = Toast.makeText(this,providerInfo.name + " found" , Toast.LENGTH_SHORT);
                     info.show();
                     return true;

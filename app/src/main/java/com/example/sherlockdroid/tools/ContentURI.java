@@ -11,6 +11,8 @@ import com.example.sherlockdroid.R;
 import static com.example.sherlockdroid.config.Config.PACKAGE;
 import static com.example.sherlockdroid.config.Config.ProviderExported1;
 import static com.example.sherlockdroid.config.Config.ProviderExported2;
+import static com.example.sherlockdroid.config.Config.ProviderExportedPath1;
+import static com.example.sherlockdroid.config.Config.ProviderExportedPath2;
 
 public class ContentURI extends Activity {
     @Override
@@ -25,8 +27,8 @@ public class ContentURI extends Activity {
             public void onClick(View v) {
                 Intent collegamento = new Intent(ContentURI.this, com.example.sherlockdroid.tools.ExportedContentPathTraversal.class);
                 collegamento.putExtra("Package", PACKAGE);
-                //collegamento.putExtra("ContentURI", ProviderExported1);
-                //collegamento.putExtra("ContentProvider",ProviderExported2);
+                collegamento.putExtra("ContentURI", ProviderExportedPath1);
+                collegamento.putExtra("ContentProvider",ProviderExportedPath2);
                 startActivity(collegamento);
             }
         });
