@@ -14,6 +14,7 @@
             android:layout_width="339dp"
             android:layout_height="68dp"
             android:text="@string/main_title"
+            android:textAlignment="center"
             android:textSize="32sp"
             android:textColor="@color/black"/>
     </RelativeLayout>
@@ -25,6 +26,8 @@
         android:layout_marginLeft="-300dp"
         android:layout_marginTop="100dp"
         android:text="@string/tapjacking"
+        android:background="@color/standard"
+        android:textColor="@color/white"
         />
 
     <Button
@@ -34,6 +37,8 @@
         android:layout_marginLeft="-150dp"
         android:layout_marginTop="210dp"
         android:text="@string/exportedActivity"
+        android:background="@color/standard"
+        android:textColor="@color/white"
         />
 
     <Button
@@ -43,15 +48,19 @@
         android:layout_marginLeft="-150dp"
         android:layout_marginTop="330dp"
         android:text="@string/exportedReceiver"
+        android:background="@color/standard"
+        android:textColor="@color/white"
         />
 
     <Button
         android:id="@+id/ExportedService"
         android:layout_width="150dp"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:layout_marginLeft="-150dp"
         android:layout_marginTop="450dp"
         android:text="@string/exportedService"
+        android:background="@color/standard"
+        android:textColor="@color/white"
         />
 
     <Button
@@ -61,6 +70,8 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="100dp"
         android:text="@string/contentURI"
+        android:background="@color/standard"
+        android:textColor="@color/white"
         />
 
 

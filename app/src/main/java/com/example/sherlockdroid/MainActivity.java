@@ -79,10 +79,10 @@ public class MainActivity extends AppCompatActivity {
                 exportedContent.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent collegamento = new Intent(MainActivity.this, com.example.sherlockdroid.tools.ExportedContent.class);
-                        collegamento.putExtra("Package", PACKAGE);
-                        collegamento.putExtra("ContentURI", ProviderExported1);
-                        collegamento.putExtra("ContentProvider",ProviderExported2);
+                        Intent collegamento = new Intent(MainActivity.this, com.example.sherlockdroid.tools.ContentURI.class);
+                        //collegamento.putExtra("Package", PACKAGE);
+                        //collegamento.putExtra("ContentURI", ProviderExported1);
+                        //collegamento.putExtra("ContentProvider",ProviderExported2);
                         startActivity(collegamento);
                     }
                 });

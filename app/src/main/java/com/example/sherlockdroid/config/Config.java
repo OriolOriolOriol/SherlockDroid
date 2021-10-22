@@ -23,6 +23,9 @@ public class Config {
     //===========================================================================================================
     public static final String ProviderExported1="com.elearnsecurity.injectme.provider.CredentialProvider";
     public static final String ProviderExported2="com.elearnsecurity.injectme.CredentialProvider";
+    //===========================================================================================================
+    public static final String ProviderExportedPath="";
+
 
 
 

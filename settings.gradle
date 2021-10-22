@@ -1,2 +1,3 @@
+include ':libcpmap'
 include ':app'
 rootProject.name = "SherlockDroid"

@@ -28,7 +28,7 @@ public class ExportedActivity extends Activity {
 
     }
 
-    //Bisogna costruire un metodo override che permette di gesitre il dato che ci arriva
+    //Bisogna costruire un metodo override che permette di gestire il dato che ci arriva
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == PICK_REQUEST) {
