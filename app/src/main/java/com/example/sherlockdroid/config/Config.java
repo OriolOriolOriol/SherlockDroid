@@ -12,17 +12,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Config {
-    public static final String PACKAGE = "com.els.filebrowser";
+    public static final String PACKAGE = "org.owasp.goatdroid.fourgoats";
     //===========================================================================================================
-    public static final String ActivityExported="com.elearnsecurity.insecureactivities.LeakyActivity";
+    public static final String ActivityExported="com.android.insecurebankv2.ViewStatement";
     //===========================================================================================================
-    public static final String ReceiverExported="com.elearnsecurity.vulnerablereceiver.VulnerableReceiver";
-    public static final String ReceiverExportedACTION="com.elearnsecurity.vulnerablereceiver.CHANGEPW";
+    public static final String ReceiverExported="org.owasp.goatdroid.fourgoats.broadcastreceivers.SendSMSNowReceiver";
+    public static final String ReceiverExportedACTION="org.owasp.goatdroid.fourgoats.SOCIAL_SMS";
     //===========================================================================================================
     public static final String ServiceExported="com.elearnsecurity.sillyservice.SillyService";
     //===========================================================================================================
-    public static final String ProviderExported1="com.elearnsecurity.injectme.provider.CredentialProvider";
-    public static final String ProviderExported2="com.elearnsecurity.injectme.CredentialProvider";
+    public static final String ProviderExported1="com.elearnsecurity.provider.Wallet"; //qui inserisci il content URI
+    public static final String ProviderExported2="com.elearnsecurity.weakwallet.VulnerableProvider"; //qui il path del nome della classe in cui viene usato il content URI
     //===========================================================================================================
     public static final String ProviderExportedPath1="content://"+ PACKAGE+"/../../../../../../etc/hosts";
     public static final String ProviderExportedPath2="com.els.filebrowser.accessfile";

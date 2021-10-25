@@ -18,7 +18,6 @@ public class ExportedActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         String PACKAGE = getIntent().getStringExtra("Package");
         String Activity = getIntent().getStringExtra("Activity");
         Intent pickSecretIntent= new Intent();

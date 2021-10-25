@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            if(isProviderishere()){
+            if(isReceiverishere()){
                 setContentView(R.layout.activity_main);
                 //Gli oggetti che inizializzi sempre dopo la creazione del contentView
 
@@ -41,9 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 exportedActivity.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent collegamento = new Intent(MainActivity.this, com.example.sherlockdroid.tools.ExportedActivity.class);
-                        collegamento.putExtra("Package", PACKAGE);
-                        collegamento.putExtra("Activity",ActivityExported);
+                        Intent collegamento = new Intent(MainActivity.this, com.example.sherlockdroid.tools.ActivityType.class);
                         startActivity(collegamento);
                     }
                 });//Close action button exportedActivity
@@ -87,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(collegamento);
                     }
                 });
-
             }else{
                 Log.v("NON ESISTE", "IL PACKAGE O COMPONENTE NON ESISTE");
                 //Fai altro
@@ -101,11 +98,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }//Close method onCreate
-
-
-
-
-
 
 
     private  boolean isPackageInstalled() {
@@ -161,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
             ProviderInfo[] list = pManager.getPackageInfo(PACKAGE, PackageManager.GET_PROVIDERS).providers;
             for (ProviderInfo providerInfo : list) {
                 //Log.v("PROVIDERS",providerInfo.name);
-                if(providerInfo.name.equals(ProviderExportedPath2)) {
+                if(providerInfo.name.equals(ProviderExported2)) {
                     Toast info = Toast.makeText(this,providerInfo.name + " found" , Toast.LENGTH_SHORT);
                     info.show();
                     return true;

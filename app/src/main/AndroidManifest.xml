@@ -4,8 +4,10 @@
     package="com.example.sherlockdroid" xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.READ_LOGS"  tools:ignore="ProtectedPermissions"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <permission android:name="WRITE_EXTERNAL_STORAGE"/>
+    <permission android:name="READ_EXTERNAL_STORAGE"/>
+    <permission android:name="WRITE_INTERNAL_STORAGE"/>
+    <permission android:name="READ_INTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -27,6 +29,8 @@
         <activity android:name=".tools.ExportedContent"></activity>
         <activity android:name=".tools.ContentURI"></activity>
         <activity android:name=".tools.ExportedContentPathTraversal"></activity>
+        <activity android:name=".tools.ActivityType"></activity>
+        <activity android:name=".tools.WebViewExported"></activity>
     </application>
 
 </manifest>
