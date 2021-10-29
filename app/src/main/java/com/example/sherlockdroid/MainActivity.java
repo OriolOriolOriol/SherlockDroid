@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            if(isReceiverishere()){
+            if(isActivityishere()){
                 setContentView(R.layout.activity_main);
                 //Gli oggetti che inizializzi sempre dopo la creazione del contentView
 
@@ -89,6 +89,28 @@ public class MainActivity extends AppCompatActivity {
                 Log.v("NON ESISTE", "IL PACKAGE O COMPONENTE NON ESISTE");
                 //Fai altro
             }
+
+
+            /*5- Read EXTERNAL STORAGE*/
+             Button readexternal=(Button) findViewById(R.id.ReadExternalStorage);
+             readexternal.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View v) {
+                     Intent collegamento = new Intent(MainActivity.this, com.example.sherlockdroid.tools.ReadExternal.class);
+                     startActivity(collegamento);
+                 }
+             });
+
+             /*6- TAPKJACKING*/
+            Button tapjacking=(Button) findViewById(R.id.ButtonTapjacking);
+            tapjacking.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent collegamento = new Intent(MainActivity.this, com.example.sherlockdroid.tools.TapJacking.class);
+                    startActivity(collegamento);
+                }
+            });
+
         } catch (PackageManager.NameNotFoundException e) {
             //Log.v("NON ESISTE", "IL PACKAGE O ACTIVITY NON ESISTE2");
             Toast error = Toast.makeText(this,"Package " + PACKAGE  + " not found", Toast.LENGTH_SHORT);

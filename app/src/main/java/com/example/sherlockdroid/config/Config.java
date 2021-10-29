@@ -14,7 +14,7 @@ import java.io.IOException;
 public class Config {
     public static final String PACKAGE = "org.owasp.goatdroid.fourgoats";
     //===========================================================================================================
-    public static final String ActivityExported="com.android.insecurebankv2.ViewStatement";
+    public static final String ActivityExported="org.owasp.goatdroid.fourgoats.activities.SocialAPIAuthentication";
     //===========================================================================================================
     public static final String ReceiverExported="org.owasp.goatdroid.fourgoats.broadcastreceivers.SendSMSNowReceiver";
     public static final String ReceiverExportedACTION="org.owasp.goatdroid.fourgoats.SOCIAL_SMS";

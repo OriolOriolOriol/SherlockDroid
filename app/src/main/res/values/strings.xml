@@ -13,5 +13,6 @@
     <string name="Activity1">WebView via Activity</string>
     <string name="Activity2">Classic Exploting Activity</string>
     <string name="ContentURI2">Query DB via Content URI</string>
+    <string name="ExternalMemory">Read External Memory</string>
     <string name="tap_jacking_text">This application demonstrates TapJacking.</string>
 </resources>

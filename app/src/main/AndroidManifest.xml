@@ -31,6 +31,8 @@
         <activity android:name=".tools.ExportedContentPathTraversal"></activity>
         <activity android:name=".tools.ActivityType"></activity>
         <activity android:name=".tools.WebViewExported"></activity>
+        <activity android:name=".tools.ReadExternal"></activity>
+        <activity android:name=".tools.TapJacking"></activity>
     </application>
 
 </manifest>
