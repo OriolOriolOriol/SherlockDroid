@@ -12,9 +12,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Config {
-    public static final String PACKAGE = "org.owasp.goatdroid.fourgoats";
+    public static final String PACKAGE = "com.elearnsecurity.insecureactivities";
     //===========================================================================================================
-    public static final String ActivityExported="org.owasp.goatdroid.fourgoats.activities.SocialAPIAuthentication";
+    public static final String ActivityExported="com.elearnsecurity.insecureactivities.SecretActivity";
     //===========================================================================================================
     public static final String ReceiverExported="org.owasp.goatdroid.fourgoats.broadcastreceivers.SendSMSNowReceiver";
     public static final String ReceiverExportedACTION="org.owasp.goatdroid.fourgoats.SOCIAL_SMS";

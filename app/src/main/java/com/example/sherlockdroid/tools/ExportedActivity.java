@@ -22,7 +22,8 @@ public class ExportedActivity extends Activity {
         String Activity = getIntent().getStringExtra("Activity");
         Intent pickSecretIntent= new Intent();
         pickSecretIntent.setComponent(new ComponentName(PACKAGE,Activity));
-        startActivityForResult(pickSecretIntent, PICK_REQUEST);
+        //startActivity(pickSecretIntent); //TODO SecretActivity
+        startActivityForResult(pickSecretIntent, PICK_REQUEST); //TODO LeakyActivity
         setContentView(R.layout.exported);
 
     }

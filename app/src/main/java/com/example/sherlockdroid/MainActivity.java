@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
+
             if(isActivityishere()){
                 setContentView(R.layout.activity_main);
                 //Gli oggetti che inizializzi sempre dopo la creazione del contentView
