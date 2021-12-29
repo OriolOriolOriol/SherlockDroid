@@ -1,10 +1,6 @@
 package com.example.sherlockdroid.config;
 
 import android.os.Environment;
-import android.util.Log;
-import android.widget.TextView;
-
-import com.example.sherlockdroid.R;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -12,17 +8,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Config {
-    public static final String PACKAGE = "com.elearnsecurity.insecureactivities";
+    public static final String PACKAGE = "jakhar.aseem.diva";
     //===========================================================================================================
-    public static final String ActivityExported="com.elearnsecurity.insecureactivities.SecretActivity";
+    public static final String ActivityExported="jakhar.aseem.diva.LogActivity";
     //===========================================================================================================
     public static final String ReceiverExported="org.owasp.goatdroid.fourgoats.broadcastreceivers.SendSMSNowReceiver";
     public static final String ReceiverExportedACTION="org.owasp.goatdroid.fourgoats.SOCIAL_SMS";
     //===========================================================================================================
     public static final String ServiceExported="com.elearnsecurity.sillyservice.SillyService";
     //===========================================================================================================
-    public static final String ProviderExported1="com.elearnsecurity.provider.Wallet"; //qui inserisci il content URI
-    public static final String ProviderExported2="com.elearnsecurity.weakwallet.VulnerableProvider"; //qui il path del nome della classe in cui viene usato il content URI
+    public static final String ProviderExported1="com.elearnsecurity.injectme.provider.CredentialProvider/credentials"; //qui inserisci il content URI
+    public static final String ProviderExported2="com.elearnsecurity.injectme.CredentialProvider"; //qui il path del nome della classe in cui viene usato il content URI
     //===========================================================================================================
     public static final String ProviderExportedPath1="content://"+ PACKAGE+"/../../../../../../etc/hosts";
     public static final String ProviderExportedPath2="com.els.filebrowser.accessfile";

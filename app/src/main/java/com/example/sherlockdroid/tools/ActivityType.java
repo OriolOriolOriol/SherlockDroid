@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.sherlockdroid.MainActivity;
 import com.example.sherlockdroid.R;
 
 import static com.example.sherlockdroid.config.Config.ActivityExported;
@@ -43,3 +42,4 @@ public class ActivityType  extends Activity {
 
     }
 }
+

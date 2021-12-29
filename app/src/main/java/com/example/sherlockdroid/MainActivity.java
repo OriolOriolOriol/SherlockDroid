@@ -1,7 +1,6 @@
 package com.example.sherlockdroid;
 
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
@@ -17,9 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import static com.example.sherlockdroid.config.Config.ActivityExported;
 import static com.example.sherlockdroid.config.Config.PACKAGE;
-import static com.example.sherlockdroid.config.Config.ProviderExported1;
 import static com.example.sherlockdroid.config.Config.ProviderExported2;
-import static com.example.sherlockdroid.config.Config.ProviderExportedPath2;
 import static com.example.sherlockdroid.config.Config.ReceiverExported;
 import static com.example.sherlockdroid.config.Config.ReceiverExportedACTION;
 import static com.example.sherlockdroid.config.Config.ServiceExported;

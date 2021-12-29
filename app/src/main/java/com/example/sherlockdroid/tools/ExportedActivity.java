@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import com.example.sherlockdroid.R;
 
-import org.w3c.dom.Text;
-
 
 public class ExportedActivity extends Activity {
     public static final int PICK_REQUEST = 1;  // codice identificativo dell activity chiamata
@@ -20,10 +18,12 @@ public class ExportedActivity extends Activity {
 
         String PACKAGE = getIntent().getStringExtra("Package");
         String Activity = getIntent().getStringExtra("Activity");
+
+
         Intent pickSecretIntent= new Intent();
         pickSecretIntent.setComponent(new ComponentName(PACKAGE,Activity));
         //startActivity(pickSecretIntent); //TODO SecretActivity
-        startActivityForResult(pickSecretIntent, PICK_REQUEST); //TODO LeakyActivity
+        //startActivityForResult(pickSecretIntent, PICK_REQUEST); //TODO LeakyActivity
         setContentView(R.layout.exported);
 
     }
